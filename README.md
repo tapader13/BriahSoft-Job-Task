@@ -31,6 +31,16 @@ A React application that analyzes GitHub profiles, showing repositories and comm
 
    cd BriahSoft-Job-Task
 
+   npm install 
+   
+   npm run dev
+
+2. Locally Connect
+
+   ```bash
+   npm run dev
+   ```
+
 ### Deployment Instructions
 
 For deployment on platforms like Vercel:
