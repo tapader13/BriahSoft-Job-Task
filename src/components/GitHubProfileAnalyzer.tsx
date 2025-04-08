@@ -67,6 +67,7 @@ export function GitHubProfileAnalyzer() {
           },
         }
       );
+      console.log(userResponse, 'userResponse');
       if (!userResponse.ok)
         throw new Error(`User not found or API rate limit exceeded`);
       const userData = await userResponse.json();
