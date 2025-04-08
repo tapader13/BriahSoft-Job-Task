@@ -63,8 +63,7 @@ export function GitHubProfileAnalyzer() {
         `https://api.github.com/users/${inputUsername}`,
         {
           headers: {
-            Authorization:
-              'Bearer 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',
+            Authorization: import.meta.env.VITE_GITHUB_TOKEN,
           },
         }
       );
@@ -78,8 +77,7 @@ export function GitHubProfileAnalyzer() {
         `https://api.github.com/users/${inputUsername}/repos?sort=updated&per_page=100`,
         {
           headers: {
-            Authorization:
-              'Bearer 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',
+            Authorization: import.meta.env.VITE_GITHUB_TOKEN,
           },
         }
       );
@@ -122,8 +120,7 @@ export function GitHubProfileAnalyzer() {
             `https://api.github.com/search/commits?q=author:${inputUsername}+committer-date:${startISO}..${endISO}`,
             {
               headers: {
-                Authorization:
-                  'Bearer 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',
+                Authorization: import.meta.env.VITE_GITHUB_TOKEN,
                 Accept: 'application/vnd.github.cloak-preview',
               },
             }
@@ -131,6 +128,7 @@ export function GitHubProfileAnalyzer() {
 
           if (searchResponse.ok) {
             const result = await searchResponse.json();
+            // console.log(result, 'ok');
             commitCounts.push({
               date: displayDate,
               count: result.total_count,
